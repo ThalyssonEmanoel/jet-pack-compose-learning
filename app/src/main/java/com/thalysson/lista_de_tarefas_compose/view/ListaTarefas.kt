@@ -7,10 +7,13 @@ import androidx.compose.material.icons.filled.AddCircle
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.thalysson.lista_de_tarefas_compose.R
 import com.thalysson.lista_de_tarefas_compose.ui.theme.plataformaFontBlack
 import com.thalysson.lista_de_tarefas_compose.ui.theme.GREEN
 import com.thalysson.lista_de_tarefas_compose.ui.theme.WHITE
@@ -19,15 +22,19 @@ import com.thalysson.lista_de_tarefas_compose.ui.theme.WHITE
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ListaTarefas(navController: NavController) {
-    var downloads by remember { mutableStateOf(0) }
 
     Scaffold(
-        containerColor = plataformaFontBlack,
+        containerColor = WHITE,
         floatingActionButton = {
-            FloatingActionButton(onClick = { downloads++ }) {
+            FloatingActionButton(
+                onClick = { navController.navigate("salvarTarefa") },
+                containerColor = GREEN,
+                contentColor = plataformaFontBlack
+            ) {
                 Icon(
-                    imageVector = Icons.Filled.AddCircle,
-                    contentDescription = "Download"
+                    //Para criar usar um ícone específico, vá até o res na raiz do app, drawable e clicka com o botão direito
+                    //Após isso -> new -> vector asset e então adicione o novo ícone.
+                    imageVector = ImageVector.vectorResource(id = R.drawable.buttom_arrow_next), "Download"
                 )
             }
         },
@@ -46,18 +53,5 @@ fun ListaTarefas(navController: NavController) {
                 )
             )
         },
-    ) { innerPadding ->
-        Column(
-            modifier = Modifier
-                .fillMaxSize()
-                .padding(innerPadding)
-                .padding(16.dp)
-        ) {
-            Text(
-                text = "Você clicou em download $downloads vezes.",
-                color = WHITE,
-                fontSize = 16.sp
-            )
-        }
-    }
+    ) {  }
 }
