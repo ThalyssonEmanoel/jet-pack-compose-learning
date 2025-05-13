@@ -1,16 +1,13 @@
 package com.thalysson.lista_de_tarefas_compose
 
+/**
+ * Código feito com base na playlist de aulas sobre jetpack compose: https://youtu.be/DD88xfumD-8?si=0w_y4_W1NkWu-16w
+ */
+
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 /**
  * androidx.navigation:navigation-compose Importantissímo para a navegação entre as telas, ele é um dependência que foi criada em build.gradle.kts (:app)
  */

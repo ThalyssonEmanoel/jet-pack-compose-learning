@@ -62,7 +62,7 @@ fun SalvarTarefa( navController: NavController ){
             TopAppBar(
                 title = {
                     Text(
-                        text = "Salvar tarefas",
+                        text = "Salvar pessoas",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
                         color = plataformaFontBlack
@@ -103,8 +103,8 @@ fun SalvarTarefa( navController: NavController ){
                 },
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(24.dp, 64.dp, 24.dp, 0.dp),
-                label = "Email",
+                    .padding(24.dp,32.dp, 24.dp, 0.dp),
+                label = "Nome da pessoa",
                 maxLines = 1,
                 keyboardType = KeyboardType.Text
             )
@@ -117,7 +117,7 @@ fun SalvarTarefa( navController: NavController ){
                 modifier = Modifier
                     .fillMaxWidth().height(150.dp)
                     .padding(24.dp, 16.dp, 24.dp, 0.dp),
-                label = "Descrição do seu email",
+                label = "Descrição da pessoa",
                 maxLines = 5,
                 keyboardType = KeyboardType.Text
             )
@@ -127,7 +127,7 @@ fun SalvarTarefa( navController: NavController ){
                modifier = Modifier.padding(24.dp, 16.dp, 24.dp, 0.dp)
             ){
                 Text(
-                    text = "Qual o seu sexo?",
+                    text = "Sexo",
                     fontSize = 16.sp,
                     fontWeight = FontWeight.Bold
                 )
